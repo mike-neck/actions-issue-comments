@@ -13,6 +13,6 @@ jobs:
     steps:
       -
         name: Show github
-        run: echo ${OBJ}
+        run: echo "${OBJ}"
         env:
           OBJ: ${{ toJson(github) }}
