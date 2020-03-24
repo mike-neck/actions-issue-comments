@@ -2,7 +2,7 @@ name: pull request
 
 on:
   pull_request:
-    types: [opened, created, review_requested, edited]
+    types: [opened, created, review_requested, ready_for_review, edited, closed]
 
 jobs:
   comment:
