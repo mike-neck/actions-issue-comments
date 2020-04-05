@@ -19,4 +19,4 @@ jobs:
 
       -
          name: Do you have gpg2
-         run: gpg2 --help
+         run: gpg --help
