@@ -15,3 +15,16 @@ jobs:
         env:
           EVENT: ${{ toJson(github.event) }}
         run: echo "${EVENT}"
+
+      -
+         name: Export issue event
+         env:
+          EVENT: ${{ toJson(github.event) }}
+         run: echo "${EVENT}" > ./event.json
+
+      -
+         name: Store event
+         uses: actions/upload-artifact@v2
+         with:
+           name: issue-event.json
+           path: ./event.json
