@@ -1,0 +1,17 @@
+name: Issue created
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  show-event:
+    name: Show event
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: Show event
+        env:
+          EVENT: ${{ toJson(github.event) }}
+        run: echo "${EVENT}"
