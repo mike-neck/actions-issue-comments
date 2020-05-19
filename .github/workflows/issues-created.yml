@@ -22,6 +22,7 @@ jobs:
           EVENT: ${{ toJson(github.event) }}
          run: echo "${EVENT}" > ./event.json
 
+      # 何が出るかな？
       -
          name: Store event
          uses: actions/upload-artifact@v2
