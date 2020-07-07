@@ -1,0 +1,28 @@
+# This is a basic workflow to help you get started with Actions
+
+name: '手動トリガー'
+
+on:
+  workflow_dispatch:
+    inputs:
+      foo:
+        required: true
+        description: 'ｼﾞｭｹﾞﾑ!ﾊﾟｯﾖｴｰﾝ!'
+        default: 'ｼﾞｭｹﾞﾑ!ﾊﾟｯﾖｴｰﾝ!'
+         
+jobs:
+  manual:
+    name: 'Manual workflow'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Show events
+      run: echo "${EVENT_ITEM}"
+      env:
+        EVENT_ITEM: ${{ toJson(github.event) }}
+      
+    - uses: actions/checkout@v2
+
+    - name: Run a one-line script
+      run: echo Hello, world!
+
