@@ -5,10 +5,10 @@ name: '手動トリガー'
 on:
   workflow_dispatch:
     inputs:
-      foo:
+      branch:
         required: true
-        description: 'ｼﾞｭｹﾞﾑ!ﾊﾟｯﾖｴｰﾝ!'
-        default: 'ｼﾞｭｹﾞﾑ!ﾊﾟｯﾖｴｰﾝ!'
+        description: 'デプロイするブランチ'
+        default: 'develop'
          
 jobs:
   manual:
