@@ -3,12 +3,7 @@
 name: '手動トリガー'
 
 on:
-  workflow_dispatch:
-    inputs:
-      branch:
-        required: true
-        description: 'デプロイするブランチ'
-        default: 'develop'
+  workflow_dispatch
          
 jobs:
   manual:
