@@ -30,7 +30,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: item
-        key: run-id.txt
+        path: run-id.txt
 
     - name: Show artifact by curl
       run: |
