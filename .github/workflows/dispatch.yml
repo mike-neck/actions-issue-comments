@@ -15,8 +15,11 @@ jobs:
       run: echo "${EVENT_ITEM}"
       env:
         EVENT_ITEM: ${{ toJson(github.event) }}
-      
-    - uses: actions/checkout@v2
+
+    - name: Show github
+      run: echo "${CTX}"
+      env:
+        CTX: ${{ toJson(github) }} 
 
     - name: Run a one-line script
       run: echo Hello, world!
