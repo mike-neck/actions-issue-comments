@@ -16,4 +16,4 @@ jobs:
           echo "= output ==="
           echo "${{ steps.composite.outputs.hash }}"
           echo "= hash ==="
-          echo echo "This is test" | openssl sha1
+          echo "This is test" | openssl sha1
