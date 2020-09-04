@@ -1,0 +1,19 @@
+name: calling composite steps
+on: workflow_dispatch
+
+steps:
+  call:
+    runs-on: ubuntu-20.04
+    name: Call composite steps
+    steps:
+      - uses: mike-neck/example-composite-steps-action@v1
+        id: composite
+        with:
+          message: "This is test"
+
+      - name: show result
+        run: |
+          echo "= output ==="
+          echo "${{ steps.composite.outputs.hash }}"
+          echo "= hash ==="
+          echo echo "This is test" | openssl sha1
