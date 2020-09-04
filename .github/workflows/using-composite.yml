@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-20.04
     name: Call composite steps
     steps:
-      - uses: mike-neck/example-composite-steps-action@v1.0.3
+      - uses: mike-neck/example-composite-steps-action@v1.0.4
         id: composite
         with:
           message: "This is test"
