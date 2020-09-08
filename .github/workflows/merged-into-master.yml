@@ -1,0 +1,24 @@
+name: "[master]merged"
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  pr-close-branch:
+    if: github.event.pull_request.merged && github.ref == 'master'
+    name: "[master]merged"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: show github
+        run: echo "${OBJ}"
+        env:
+          OBJ: ${{toJson(github)}}
+
+      - name: show branch
+        run: git branch
+
+      - name: show log
+        run: git log --oneline -n 10
