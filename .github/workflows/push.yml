@@ -20,6 +20,10 @@ jobs:
          name: show jq path
          run: which jq
 
+      -
+         name: set item price
+         run: echo 'ITEM_PRICE=300' >> $GITHUB_ENV
+
       - name: Show env
         run: env | grep ITEM
         env:
