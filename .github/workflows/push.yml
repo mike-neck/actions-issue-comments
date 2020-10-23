@@ -19,3 +19,10 @@ jobs:
       -
          name: show jq path
          run: which jq
+
+      - name: Show env
+        run: env | grep ITEM
+        env:
+          ITEM_NAME: foo
+          ITEM_TITLE: bar
+          CODE_NAME: baz
