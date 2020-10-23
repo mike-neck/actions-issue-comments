@@ -22,7 +22,9 @@ jobs:
 
       -
          name: set item price
-         run: echo 'ITEM_PRICE=300' >> $GITHUB_ENV
+         run: |
+           echo 'ITEM_PRICE=300' >> $GITHUB_ENV
+           echo 'ITEM_CAKE=strawberry' >> $GITHUB_ENV
 
       - name: Show env
         run: env | grep ITEM
