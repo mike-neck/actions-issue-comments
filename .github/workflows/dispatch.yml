@@ -26,6 +26,18 @@ jobs:
       env:
         RUN_ID: ${{ github.run_id }}
 
+    - name: Ignore Failure
+      run: echo 'foo' | grep -q 'bar'
+      continue-on-error: true
+
+    - name: Check Previous Step is Failure
+      if: failure()
+      run: echo 'Step[Ignore Failure] fails'
+
+    - name: Check Previous Step is Success
+      if: success()
+      run: echo 'Step[Ignore Failure] success'
+
     - name: Upload artifact
       uses: actions/upload-artifact@v1
       with:
