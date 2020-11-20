@@ -1,0 +1,31 @@
+name: fork-join
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  pre:
+    runs-on: ubuntu-20.04
+    name: pre
+    steps:
+      - name: show your name
+        run: echo "pre"
+    
+  fork:
+    needs: [pre]
+    runs-on: ubuntu-20.04
+    name: "fork ${{ matrix.value }}"
+    strategy:
+      matrix:
+        value: [foo, bar, baz]
+    steps:
+      - name: show value
+        run: echo "${{ matrix.value }}"
+
+  join:
+    name: join
+    runs-on: ubuntu-20.04
+    needs: [fork]
+    steps:
+      - name: show your name
+        run: echo "post"
