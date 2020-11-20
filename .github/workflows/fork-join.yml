@@ -21,6 +21,17 @@ jobs:
     steps:
       - name: show value
         run: echo "${{ matrix.value }}"
+      - name: fail on bar
+        run: |
+          if [[ "${VALUE}" == "foo" || "${VALUE}" == "baz" ]] ; then
+            echo "Greate ${VALUE}"
+            exit 0
+          else
+            echo "POOR ${VALUE}"
+            exit 1
+          fi
+        env:
+          VALUE: "${{ matrix.value }}"
 
   join:
     name: join
