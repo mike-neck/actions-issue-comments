@@ -19,6 +19,13 @@ jobs:
       -
          name: show jq path
          run: which jq
+      -
+         name: show dict directory
+         run: |
+           ls /usr/share/dict/
+           if [[ -f "/usr/share/dict/words" ]]; then
+             wc -l "/usr/share/dict/words"
+           fi
 
       -
          name: set item price
