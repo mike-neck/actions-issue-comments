@@ -16,6 +16,10 @@ jobs:
         run: echo "${OBJ}"
         env:
           OBJ: ${{ toJson(github) }}
+
+      - name: show current directory
+        run: pwd
+
       -
          name: show jq path
          run: which jq
