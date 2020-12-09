@@ -43,3 +43,13 @@ jobs:
           ITEM_NAME: foo
           ITEM_TITLE: bar
           CODE_NAME: baz
+
+  show-latest-commits:
+    name: show latest commit
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: show git log
+        run: |
+          git log --pretty=format:"[%ad][%an] %h - %s" --data=iso
