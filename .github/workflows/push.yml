@@ -52,4 +52,4 @@ jobs:
         uses: actions/checkout@v2
       - name: show git log
         run: |
-          git log --pretty=format:"[%ad][%an] %h - %s" --data=iso
+          git log --pretty=format:"[%ad][%an] %h - %s" --date=iso
