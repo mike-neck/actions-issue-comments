@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: compare with foo
         run: echo "${{ matrix.key }}"
-        if: matrix.key == "foo"
+        if: matrix.key == 'foo'
 
   merge:
     name: Pushed to master
