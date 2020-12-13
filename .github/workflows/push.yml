@@ -6,6 +6,19 @@ on:
       - master
 
 jobs:
+  string-compare:
+    name: String Compare
+    strategy:
+      matrix:
+        key:
+          - foo
+          - bar
+    runs-on: ubuntu-latest
+    steps:
+      - name: compare with foo
+        run: echo "${{ matrix.key }}"
+        if: matrix.key == "foo"
+
   merge:
     name: Pushed to master
     runs-on: ubuntu-latest
