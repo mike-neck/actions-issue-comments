@@ -19,6 +19,12 @@ jobs:
         run: echo "${{ matrix.key }}"
         if: matrix.key == 'foo'
 
+      - name: write text
+        run: echo 'foo' > text.txt
+
+      - name: read text
+        run: cat text.txt
+
   merge:
     name: Pushed to master
     runs-on: ubuntu-latest
