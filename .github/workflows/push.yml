@@ -14,7 +14,6 @@ jobs:
           - foo
           - bar
     runs-on: ubuntu-latest
-    if: ${{ matrix.key }} != 'baz'
     steps:
       - name: compare with foo
         run: echo "${{ matrix.key }}"
