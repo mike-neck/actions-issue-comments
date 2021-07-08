@@ -16,3 +16,7 @@ jobs:
           echo "${OBJ}"
         env:
           OBJ: ${{ toJson(github) }}
+
+      -
+         name: Do you have gpg2
+         run: gpg --help
